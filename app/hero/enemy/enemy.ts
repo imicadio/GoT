@@ -5,8 +5,7 @@ import { IEnemy } from '../shared/hero.model'
 
 @Component({
     selector: 'enemy',
-    templateUrl: './enemy.html',
-    styleUrls: ['./enemy.css']
+    templateUrl: './enemy.html'
 })
 
 export class Enemy implements OnInit {
