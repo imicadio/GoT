@@ -10,6 +10,14 @@ export class SharedHero {
     getHero(id:number){
         return HEROES.find(hero => hero.id === id)
     }
+
+    getFriend(id: number){
+      return HEROES.find(friends => friends.id === id)
+    }
+
+    getEnemy(id: number){
+      return HEROES.find(enemy => enemy.id === id)
+    }
 }
 
 const HEROES: IHero[] = [

@@ -19,6 +19,11 @@ import { ErrorComponent } from './error/error.component'
 import { HeroRouteActivator } from './hero/hero-detail/hero-route-activator.service'
 import { EnemyListComponent } from './hero/enemy/enemy-list.component'
 import { FriendsListComponent } from './hero/friends/friends-list.component'
+import { Friends } from './hero/friends/friends'
+import { FriendsRouteActivator } from './hero/friends/friends-route-activator.service'
+import { Enemy } from './hero/enemy/enemy'
+import { EnemyRouteActivator } from './hero/enemy/enemy-route-activator.service'
+
 
 @NgModule({
   declarations: [
@@ -29,7 +34,9 @@ import { FriendsListComponent } from './hero/friends/friends-list.component'
     HeroDetailComponent,
     ErrorComponent,
     EnemyListComponent,
-    FriendsListComponent
+    FriendsListComponent,
+    Friends,
+    Enemy
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,7 @@ import { FriendsListComponent } from './hero/friends/friends-list.component'
     MaterialModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [SharedHero, HeroRouteActivator],
+  providers: [SharedHero, HeroRouteActivator, FriendsRouteActivator, EnemyRouteActivator],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
