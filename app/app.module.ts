@@ -17,6 +17,8 @@ import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component'
 import { appRoutes } from './routes';
 import { ErrorComponent } from './error/error.component'
 import { HeroRouteActivator } from './hero/hero-detail/hero-route-activator.service'
+import { EnemyListComponent } from './hero/enemy/enemy-list.component'
+import { FriendsListComponent } from './hero/friends/friends-list.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HeroRouteActivator } from './hero/hero-detail/hero-route-activator.serv
     HeroListComponent,
     HeroThumbnailComponent,
     HeroDetailComponent,
-    ErrorComponent
+    ErrorComponent,
+    EnemyListComponent,
+    FriendsListComponent
   ],
   imports: [
     BrowserModule,

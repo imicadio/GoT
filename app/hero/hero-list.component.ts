@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { SharedHero } from './shared/hero.service'
+import { IHero } from './shared/hero.model'
 
 @Component({
     selector: 'hero-list',
@@ -18,7 +19,7 @@ import { SharedHero } from './shared/hero.service'
 
 export class HeroListComponent {
     //zadeklarowana zmienna do której będę się odwoływać w html
-    heroes:any[]
+    heroes:IHero[]
 
     //konstruktor przypisuje dane sharedService
     constructor(private sharedHero: SharedHero) { }

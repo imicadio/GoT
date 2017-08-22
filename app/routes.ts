@@ -5,10 +5,9 @@ import { ErrorComponent } from './error/error.component'
 import { HeroRouteActivator } from './hero/hero-detail/hero-route-activator.service'
 
 
-export const appRoutes: Routes = [
-    { path: '', component: HeroListComponent },
-    { path: ':id', component: HeroDetailComponent, canActivate: [HeroRouteActivator] },
+export const appRoutes: Routes = [        
+    { path: 'hero', component: HeroListComponent },
+    { path: 'hero/:id', component: HeroDetailComponent, canActivate: [HeroRouteActivator] },
     { path: '404', component: ErrorComponent },
-    { path: '', redirectTo: '', pathMatch: 'full' }
-    
+    { path: '', redirectTo: 'hero', pathMatch: 'full' }    
 ]
