@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { SharedHero } from '../shared/hero.service'
 import { ActivatedRoute } from '@angular/router'
-import { IHero } from '../shared/hero.model'
+import { IFriends } from '../shared/hero.model'
 
 @Component({
     selector: 'friends',
@@ -10,7 +10,7 @@ import { IHero } from '../shared/hero.model'
 })
 
 export class Friends implements OnInit{
-    friends: IHero
+    friends: IFriends
 
     constructor(private sharedHero: SharedHero, private route: ActivatedRoute) { }
 
