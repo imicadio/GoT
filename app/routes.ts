@@ -8,8 +8,8 @@ import { HeroRouteActivator } from './hero/hero-detail/hero-route-activator.serv
 
 
 export const appRoutes: Routes = [        
-    { path: '', component: HeroListComponent },
-    { path: 'bohater', component: HeroDetailComponent }, 
-    { path: 'bohater/:id', component: HeroDetailComponent, children: [ { path: ':id', component: HeroDetailComponent} ] },      
-    { path: '**', component: ErrorComponent } 
+    { path: 'hero', component: HeroListComponent }, 
+    { path: 'hero/:id', component: HeroDetailComponent },      
+    //{ path: '**', component: ErrorComponent }, 
+    { path: '', redirectTo: '/hero', pathMatch: 'full' }
 ]
