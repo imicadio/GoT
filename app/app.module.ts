@@ -17,12 +17,6 @@ import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component'
 import { appRoutes } from './routes';
 import { ErrorComponent } from './error/error.component'
 import { HeroRouteActivator } from './hero/hero-detail/hero-route-activator.service'
-import { EnemyListComponent } from './hero/enemy/enemy-list.component'
-import { FriendsListComponent } from './hero/friends/friends-list.component'
-import { Friends } from './hero/friends/friends'
-import { FriendsRouteActivator } from './hero/friends/friends-route-activator.service'
-import { Enemy } from './hero/enemy/enemy'
-import { EnemyRouteActivator } from './hero/enemy/enemy-route-activator.service';
 
 
 
@@ -33,11 +27,7 @@ import { EnemyRouteActivator } from './hero/enemy/enemy-route-activator.service'
     HeroListComponent,
     HeroThumbnailComponent,
     HeroDetailComponent,
-    ErrorComponent,
-    EnemyListComponent,
-    FriendsListComponent,
-    Friends,
-    Enemy
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +39,7 @@ import { EnemyRouteActivator } from './hero/enemy/enemy-route-activator.service'
     MaterialModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [SharedHero, HeroRouteActivator, FriendsRouteActivator, EnemyRouteActivator],
+  providers: [SharedHero, HeroRouteActivator],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

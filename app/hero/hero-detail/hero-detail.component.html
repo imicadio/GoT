@@ -11,14 +11,19 @@
         <div class="col-md-6">
           <h2>Enemy</h2>
           <md-list>
-            <enemy-list [enemy]="hero?.enemy"></enemy-list>
-          </md-list>
+              <md-list-item *ngFor="let kurwa of hero?.enemy" routerLink="{{heroes[kurwa]?.id}}" routerLinkActive="active"><h3>{{heroes[kurwa].name}}</h3></md-list-item>
+          </md-list>          
         </div>
+
         <div class="col-md-6">
             <h2>Friends</h2>
-            <md-list>
-              <friends-list [friends]="hero?.friends"></friends-list>
-            </md-list>
+              <md-list-item *ngFor="let kurwa of hero?.friends"><h3>{{heroes[kurwa].name}}</h3></md-list-item>
           </div>
     </div>
   </div> 
+
+ 
+<!-- na jakiej zasadzie działa moja lista
+  <div *ngFor="let c of cos">
+    <p *ngFor="let k of c.ktos">{{cos[k].name}}</p>
+  </div> -->
