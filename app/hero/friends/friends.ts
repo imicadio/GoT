@@ -5,7 +5,8 @@ import { IFriends } from '../shared/hero.model'
 
 @Component({
     selector: 'friends',
-    templateUrl: './friends.html'
+    templateUrl: './friends.html',
+    styleUrls: ['./friends.css']
 })
 
 export class Friends implements OnInit{

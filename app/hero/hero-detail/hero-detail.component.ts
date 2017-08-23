@@ -5,7 +5,8 @@ import { IHero, IEnemy,IFriends } from '../shared/hero.model'
 
 @Component({
   selector: 'hero-detail',
-  templateUrl: './hero-detail.component.html'
+  templateUrl: './hero-detail.component.html',
+  styleUrls: ['./hero-detail.component.css']
 })
 
 //OnInit pobieranie DI

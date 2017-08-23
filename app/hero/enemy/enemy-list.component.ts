@@ -3,7 +3,7 @@ import { IEnemy } from '../shared/hero.model'
 
 @Component({
     selector: 'enemy-list',
-    template: '<md-list-item *ngFor="let enemys of enemy"><a [routerLink]="[enemys.id]">{{ enemys?.name }}</a></md-list-item>'
+    template: '<md-list-item *ngFor="let enemys of enemy"><a routerLink="enemy/{{enemys.id}}">{{ enemys?.name }}</a></md-list-item>'
 })
 
 export class EnemyListComponent{

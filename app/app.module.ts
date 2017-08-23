@@ -22,7 +22,8 @@ import { FriendsListComponent } from './hero/friends/friends-list.component'
 import { Friends } from './hero/friends/friends'
 import { FriendsRouteActivator } from './hero/friends/friends-route-activator.service'
 import { Enemy } from './hero/enemy/enemy'
-import { EnemyRouteActivator } from './hero/enemy/enemy-route-activator.service'
+import { EnemyRouteActivator } from './hero/enemy/enemy-route-activator.service';
+
 
 
 @NgModule({
