@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
@@ -16,7 +16,9 @@ import { SharedHero } from './hero/shared/hero.service';
 import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component'
 import { appRoutes } from './routes';
 import { ErrorComponent } from './error/error.component'
-import { HeroRouteActivator } from './hero/hero-detail/hero-route-activator.service'
+import { HeroRouteActivator } from './hero/hero-detail/hero-route-activator.service';
+import { CreateHeroComponent } from './create-hero/create-hero.component'
+
 
 
 
@@ -27,7 +29,8 @@ import { HeroRouteActivator } from './hero/hero-detail/hero-route-activator.serv
     HeroListComponent,
     HeroThumbnailComponent,
     HeroDetailComponent,
-    ErrorComponent
+    ErrorComponent,
+    CreateHeroComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { HeroRouteActivator } from './hero/hero-detail/hero-route-activator.serv
     MdButtonModule,
     MdCheckboxModule,
     MaterialModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [SharedHero, HeroRouteActivator],

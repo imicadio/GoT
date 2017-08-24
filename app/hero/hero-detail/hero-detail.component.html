@@ -11,16 +11,15 @@
         <div class="col-md-6">
           <h2>Enemy</h2>
           <md-list>
-              <md-list-item *ngFor="let kurwa of hero?.enemy" ><a [routerLink]="['/hero', heroes[kurwa]?.id]" (click)="refresh()" routerLinkActive="active"> <h3>{{heroes[kurwa].name}}</h3></a></md-list-item>
+              <md-list-item *ngFor="let kurwa of hero?.enemy"><a [routerLink]="['/bohater', heroes[kurwa]?.id]"  (click)="onSelect(kurwa.id)" routerLinkActive="active"> <h3>{{heroes[kurwa].name}}</h3></a></md-list-item>
           </md-list>          
         </div>
 
         <div class="col-md-6">
             <h2>Friends</h2>
-              <md-list-item *ngFor="let kurwa of hero?.friends" ><a [routerLink]="['/hero', heroes[kurwa]?.id]" (click)="refresh()"> <h3>{{heroes[kurwa].name}}</h3></a></md-list-item>
-          </div>
-    </div>
-  </div> 
+              <md-list-item *ngFor="let kurwa of hero?.friends"><a [routerLink]="['/bohater', heroes[kurwa]?.id]" (click)="onSelect(kurwa.id)"> <h3>{{heroes[kurwa].name}}</h3></a></md-list-item>
+        </div>
+      </div>
 
  
 <!-- na jakiej zasadzie działa moja lista

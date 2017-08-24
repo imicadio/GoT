@@ -1,0 +1,73 @@
+<form>
+  <div class="container">
+
+    <div class="row">
+      <h2>Nazwa Bohatera</h2>
+      <md-input-container class="example-full-width">
+          <input mdInput placeholder="Nazwa Bohatera" [formControl]="nazwaFormControl">
+          <md-error *ngIf="nazwaFormControl.hasError('pattern')">
+            Nazwa valid
+          </md-error>
+          <md-error *ngIf="nazwaFormControl.hasError('required')">
+            Nazwa is <strong>required</strong>
+          </md-error>
+        </md-input-container>
+    </div>
+
+    <br/>
+
+    <div class="row">
+      <label for="exampleTextarea">Example textarea</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+
+    <br/>
+
+    <div class="row">      
+      <h2>Adres URL do grafiki</h2>
+      <md-input-container class="example-full-width">
+          <input mdInput placeholder="Adres URL" [formControl]="urlRFormControl">
+          <md-error *ngIf="urlRFormControl.hasError('pattern')">
+            url valid
+          </md-error>
+          <md-error *ngIf="urlRFormControl.hasError('required')">
+            url is <strong>required</strong>
+          </md-error>
+        </md-input-container>
+    </div>
+
+    <br/>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Enemy</h2>
+        <md-input-container class="example-full-width">
+            <input mdInput placeholder="Enemy" [formControl]="enemyFormControl">
+            <md-error *ngIf="enemyFormControl.hasError('pattern')">
+              Enemy valid
+            </md-error>
+            <md-error *ngIf="enemyFormControl.hasError('required')">
+              Enemy is <strong>required</strong>
+            </md-error>
+          </md-input-container>
+      </div>
+      <div class="col-md-6">
+        <h2>Friends</h2>
+        <md-input-container class="example-full-width">
+            <input mdInput placeholder="Friends" [formControl]="friendsFormControl">
+            <md-error *ngIf="friendsFormControl.hasError('pattern')">
+              Friends valid
+            </md-error>
+            <md-error *ngIf="friendsFormControl.hasError('required')">
+              Friends is <strong>required</strong>
+            </md-error>
+          </md-input-container>
+      </div>
+    </div>
+
+    
+    <button md-button>Save</button>
+    <button md-button>Canel</button>
+
+  </div>  
+</form>

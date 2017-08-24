@@ -4,7 +4,7 @@ import { SlicePipe } from '@angular/common'
 @Component({
     selector: 'hero-thumbnail',
     template: `
-    <div [routerLink]="['/hero', hero.id]" class="well hoverwell thumbnail">
+    <div [routerLink]="['/bohater', hero.id]" class="well hoverwell thumbnail">
         <h2>{{ hero?.name }}</h2>
         <div><p>{{ hero?.opis.length > 255 ? (hero?.opis | slice:0:255) + '...' : (hero?.opis) }}</p></div>
         <br/>
