@@ -5,3 +5,19 @@
   .example-full-width {
     width: 100%;
   }
+
+.em {
+  float: right;
+  color: #E05C65; 
+  padding-left: 10px;
+}
+
+.form-control{
+  margin-top: 30px;
+  margin-left: 20px;
+  min-height: 500px;
+}
+
+.noresize {
+  resize: none; 
+}

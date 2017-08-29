@@ -1,16 +1,30 @@
+<!--
+<div class="container">
 <form [formGroup]="form" (ngSubmit)="dodaj(form.value)">
   <div class="form-group">
-    <label for="username">Username</label>
+    <label for="heroName">Username</label>
     <input 
-          formControlName="username"
-          id="username"
+          formControlName="heroName"
+          id="heroName"
           type="text"
           class="form-control">
-          <!--  && form.get('username').touched -->
+          <!--  && form.get('username').touched 
           <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
             <div *ngIf="username.errors.required">KURWA DANE</div>
             <div *ngIf="username.errors.minlength">minimum trzy znaki {{ username.errors.minlength.requiredLength }}</div>
           </div>
+  </div>
+
+  <div class="form-group col-md-3">
+      <md-input-container class="example-full-width">
+          <input mdInput placeholder="Nazwa Bohatera" formControlName="test">
+          <md-error *ngIf="form.get('test').hasError('pattern')">
+            Nazwa valid
+          </md-error>
+          <md-error *ngIf="form.get('test').hasError('required')">
+            Nazwa is <strong>required</strong>
+          </md-error>
+        </md-input-container>
   </div>
 
   <div class="form-group"> 
@@ -23,3 +37,98 @@
   </div>
   <button class="btn btn-primary" type="submit">Sign Up</button>
 </form>
+</div>
+-->
+<h1>Stwórz Bohatera</h1>
+<hr>
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="dodaj(form.value)">
+    <div class="row col-md-3 form-group">
+      <div class="form-group">
+        <md-input-container class="example-full-width">
+            <input mdInput placeholder="Nazwa Bohatera" name="name" [(ngModel)]="model.name" formControlName="heroName">
+            <md-error *ngIf="heroName.hasError('minlength')">
+              Mało znaków <strong>kurwa mać</strong>
+            </md-error>
+            <md-error *ngIf="heroName.hasError('required')">
+              Wprowadź <strong>nazwę!</strong>
+            </md-error>
+        </md-input-container>
+      </div>
+
+      <div class="form-group">
+          <md-input-container class="example-full-width">
+              <input mdInput placeholder="Link URL" name="link" [(ngModel)]="model.imageUrl" formControlName="link">
+              <md-error *ngIf="form.get('link').hasError('pattern')">
+                Niepoprawny link
+              </md-error>
+          </md-input-container>
+      </div>
+
+      <div class="form-group">
+        <h3>Enemy</h3>
+        <hr>
+        <md-input-container class="example-full-width">
+            <input mdInput placeholder="Enemy" name="enemy" [(ngModel)]="model.enemy" formControlName="enemy">
+            <md-error *ngIf="form.get('enemy').hasError('pattern')">
+              Złe dane
+            </md-error>
+        </md-input-container>
+      </div>
+
+      <div class="form-group">
+          <h3>Friends</h3>
+          <hr>
+          <md-input-container class="example-full-width">
+              <input mdInput placeholder="Friends" name="friends" [(ngModel)]="model.friends" formControlName="friends">
+              <md-error *ngIf="form.get('friends').hasError('pattern')">
+                Złe dane
+              </md-error>
+          </md-input-container>
+        </div>
+
+      <br/>
+      <button md-button type="submit" (click)="addHero()">Save</button>
+
+    </div>
+    <div class="row col-md-9">
+      <div class="form-group">
+        <textarea formControlName="opisek" name="opis" [(ngModel)]="model.opis" class="form-control noresize">Textarea z 4 rzędami</textarea> 
+      </div>
+    </div>
+  </form>
+
+  <!-- READ & DELETE -->
+  <h2>Nasi bohaterzy</h2>
+  <hr>
+  <h2>Read data & (Delete data):</h2>
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th width=400>Nazwa</th>
+      <th width=400>Opis</th>
+      <th width=250>Link</th>
+      <th width=250>Enemy</th>
+      <th width=250>Friends</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor="let hero of heroes; let i=index">
+        <td>{{ hero.name }}</td>
+        <td>{{ hero?.opis.length > 20 ? (hero?.opis | slice:0:20) + '...' : (hero?.opis) }}</td>
+        <td>{{ hero?.imageUrl.length > 10 ? (hero?.imageUrl | slice:0:7) + '...' : (hero?.imageUrl)}}</td>
+        <td>{{ hero.enemy }}</td>
+        <td>{{ hero.friends }}</td>
+        <td>
+            <a class="btn btn-success" (click)="editHero(k)">Edit</a>
+            <a class="btn btn-danger" (click)="deleteHero(i)">Delete</a>
+        </td>
+      </tr>
+  
+    </tbody>
+  </table>  
+
+</div>
+
+
+
