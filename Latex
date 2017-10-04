@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc} 
+\usepackage{graphicx}
+\title{Przykładowa strona}
+\author{Maciej Stępień}
+\date{04-10-2017r.}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Wstep blalsdlasldasl \LaTeX. 
+\end{abstract}
+% pierwsza sekcja
+\section{Sekcja tekstu numer 1}\label{sec:tekst}
+ bla bla bla \ref{eqn:wzor1}.
+
+% druga sekcja
+\section{Super wzór magnetyczny}\label{sec:matematyka}
+W substancjach mogą występować prądy wewnętrzne także wytwarzające pole magnetyczne. Prądy te nazywane są prądami magnesującymi. Powyższy wzór jest prawdziwy tylko po uwzględnieniu prądów wewnętrznych. Dla substancji w dowolnym ośrodku uwzględniając tylko prądy zewnętrzne prawo formułuje się z użyciem natężenia pola magnetycznego.
+
+\begin{equation}
+    \oint \vec{H} \cdot d\vec{l} = \int \vec{J} \cdot d\vec{a} = I,
+    \label{eqn:wzor1}
+\end{equation}
+gdzie\\
+\\ $\oint\vec{H}$ - natezenie pola magnetycznego w amperach na metr,\\
+$d\vec{l}$ – niewielki element linii całkowania C ,\\
+$\int \vec{J}$ – gęstość prądu w amperach na metr kwadratowy przepływającego przez element da powierzchni S zamkniętej przez krzywą C,\\
+$d\vec{a}$ – wektor powierzchni da, elementu powierzchni S natężenie prądu objętego krzywą C,\\
+
+% 3 sekcja
+\section{Macierz}\label{sec:macierz}
+
+$A= \left[ 
+        \begin{array}{ccc}
+         a & b & c\\ 
+         c & d & c\\
+				 d & e & f
+         \end{array}
+      \right] 
+      \qquad 
+ B= \left[ 
+       \begin{array}{cc}
+          x & y\\ 
+          z & w
+       \end{array}
+     \right]$
+		
+% 4 sekcja
+\section{Autko}\label{sec:zdjecie}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=0.35\textwidth]{C:/Users/local/Documents/zad/audi.jpg}
+	\caption{Super auto audi}
+	\label{fig:audi}
+\end{figure}
+
+
+
+
+
+\end{document}
